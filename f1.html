@@ -1,0 +1,203 @@
+<html>    
+<head>    
+    <title>Reg Form</title>   
+	<script>    
+        function check1() {    
+            
+var p1= document.getElementById("fn").value;
+if(p1.length<1)
+{
+window.alert("First Name is required"); 
+f1=0;
+}
+var re=new RegExp("^[0-9]");
+if(re.test(p1))
+window.alert("Firstname should not contain digits");
+f1=0; 
+            }  			
+ function check2()
+{
+
+var p= document.getElementById("ln").value;
+if(p.length<1)
+{
+window.alert("Last Name is required");    
+f1=0;
+}
+var res=new RegExp("^[0-9]");
+if(res.test(p))
+window.alert("lastname should not contain digits");
+f1=0;
+}
+function email()
+{
+
+var id=document.getElementById("mail").value;
+if(id.length < 1)
+{
+window.alert("filled should be filled , cannot be empty");
+f1=0;
+}
+  var re2=new RegExp("^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$");
+     if(!re2.test(id))
+			{
+			window.alert("invalid id. please enter correctly");
+			f1=0;
+			}
+			
+}
+ function mob()
+{
+
+var name=document.getElementById("mob").value;
+			if(name.length<1)
+				{
+				alert("field should be filled");
+				f1=0;
+				}
+var ae=new RegExp("^[0-9]+$");
+			if(!ae.test(name))
+				{
+				alert("Field should contain only number");
+				f1=0;}
+				}    
+function sub()
+{			
+ 
+if(f1==0){alert("Your registeration  was  successful");
+				
+				}
+else{
+				window.alert("Your Registeration was not successful");
+				}
+          
+}
+function re()
+{
+document.f1.fn.value="";
+document.f1.ln.value="";
+document.f1.mob.value="";
+document.f1.email.value="";
+document.f1.doc.value="";
+	
+document.f1.dobb.value="";
+
+}
+    </script> 
+    <style type="text/css">    
+        body{    
+            font-family: Calibri;    
+        }    
+        input[type="text"] {    
+            width: 250px;    
+        }    
+        input[type="submit"], input[type="reset"] {    
+            width: 77px;    
+            height: 27px;    
+            position: relative;left: 180px;    
+        }    
+        form{    
+            text-align: center;    
+            font-family: Calibri;    
+            font-size: 20px;  
+            border: 3px solid black;    
+            width: 600px;    
+            margin: 20px auto;    
+        }    
+        td {    
+            padding: 10px;    
+        }    
+        td:first-child {    
+            text-align: right;    
+            font-weight: bold;    
+        }    
+        td:last-child {    
+            text-align: left;    
+    }
+	h2{
+	font-size: 30px;
+	font-weight: bold;
+	color:#109ef0	
+	}
+    </style>    
+        
+</head>    
+<body>   
+	<center><img src="C:\Users\Dharshini\Downloads\the sparks-heeling minds\the sparks-heeling minds\heeling minds-the sparks\healing.jpeg" width="20%" height="20%"></center>
+	  <center> <h2>BOOK A SLOT</h2>  </center>
+    <form name="f1"  action="billing.html">       
+        <table>    
+            <tr>    
+                <td><label>First Name: </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="First Name" id="fn" onblur="check1()" required >    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Last Name: </label></td>    
+                <td>    
+                    <input type="text" name="lname" id="ln" placeholder="Last Name" onblur="check2()" required>    
+                </td>    
+            </tr>       
+            <tr>    
+                <td><label>Gender: </label></td>    
+                <td>    
+                    <input type="radio" name="gender" value="male">Male    
+                    <input type="radio" name="gender" value="female">Female    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Email Id: </label></td>    
+                <td>    
+                    <input type="text" name="email" id="mail" placeholder="example@gmail.com" onblur="email()" required>    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Mobile: </label></td>    
+                <td>    
+                    <input type="text" name="mobile" id="mob" placeholder="Enter Mobile Number" onblur="mob()" required>    
+                </td>    
+            </tr> 
+				<tr>    
+                <td><label>Date of Birth: </label></td>    
+                <td>    
+                    <input type="date" name="dob" id="dobb" required>    
+                </td>    
+            </tr>  
+			<tr>    
+                <td><label>Choose Language: </label></td>    
+                <td>    
+                    <input type="radio" name="lang" value="English">English   
+                    <input type="radio" name="lang" value="Hindi">Hindi 
+					<br>
+					<input type="radio" name="lang" value="Any">Comfortable with both
+                </td>    
+            </tr> 
+			<tr>    
+                <td><label>Previous Therapist(if any)</label></td>    
+                <td>    
+                    <input type="text" name="doc" id="doc" placeholder="Enter doctor name" required>    
+                </td>    
+            </tr> 
+			<tr>    
+                <td><label>Reason for Therapy: </label></td>
+                <td>
+                    <input type="radio" name="therapy" value="anx">Anxiety  
+					<br>
+                    <input type="radio" name="therapy" value="dep">Depression
+					<br>
+					<input type="radio" name="therapy" value="str">Stress & Negativity
+					<br>
+					<input type="radio" name="therapy" value="rela">Relationship Issues
+                  </td> 
+            </tr>
+            <tr>    
+                <td>    
+                    <input type="Submit" name="submit" value="Submit" onClick="sub()"> 				
+                    <input type="reset" name="reset" value="Reset" onClick="reset()">    
+                </td>    
+            </tr>             
+        </table>    
+    </form>    
+</body>    
+</html>
