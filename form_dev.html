@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reg Form</title>
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+        
+        input[type="text"] {
+            width: 250px;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            width: 77px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+        }
+        
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            border: 3px solid black;
+            width: 600px;
+            margin: 20px auto;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        td:last-child {
+            text-align: left;
+        }
+        
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #109ef0
+        }
+    </style>
+    <script>
+        function check1() {
+            if (fname.value.length <= 0) {
+                alert("First Name is required");
+                fname.focus();
+                return false;
+            }
+            if (lname.value.length <= 0) {
+                alert("Last Name is required");
+                lname.focus();
+                return false;
+            }
+            if (email.value.length <= 0) {
+                alert("Email Id is required");
+                email.focus();
+                return false;
+            }
+            if (mobile.value.length < 10) {
+                alert("Invalid Mobile Number");
+                mobile.focus();
+                return false;
+            }
+            return false;
+        }
+
+        function show() {
+            window.alert("Your Registration was successful");
+            window.location.href = "billing.html";
+
+        }
+    </script>
+</head>
+
+<body>
+    <center><img src="C:\Users\Jane Ann Elson\Downloads\coffee website\coffee website\images\healing.jpeg" width="20%" height="20%"></center>
+    <center>
+        <h2>BOOK A SLOT</h2>
+    </center>
+    <form name="f1" onsubmit="return show()">
+        <table>
+            <tr>
+                <td><label>First Name: </label></td>
+                <td>
+                    <input type="text" name="fname" placeholder="First Name" id="fn" onblur="check1()">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name: </label></td>
+                <td>
+                    <input type="text" name="lname" id="ln" placeholder="Last Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gender: </label></td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email Id: </label></td>
+                <td>
+                    <input type="text" name="email" id="mail" placeholder="example@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Mobile: </label></td>
+                <td>
+                    <input type="text" name="mobile" id="mob" placeholder="Enter Mobile Number">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Date of Birth: </label></td>
+                <td>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Choose Language: </label></td>
+                <td>
+                    <input type="radio" name="lang" value="English">English
+                    <input type="radio" name="lang" value="Hindi">Hindi
+                    <br>
+                    <input type="radio" name="lang" value="Any">Comfortable with both
+                </td>
+            </tr>
+            <tr>
+                <td><label>Previous Therapist(if any)</label></td>
+                <td>
+                    <input type="text" name="doc" id="doc" placeholder="Enter doctor name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Reason for Therapy: </label></td>
+                <td>
+                    <input type="radio" name="therapy" value="anx">Anxiety
+                    <br>
+                    <input type="radio" name="therapy" value="dep">Depression
+                    <br>
+                    <input type="radio" name="therapy" value="str">Stress & Negativity
+                    <br>
+                    <input type="radio" name="therapy" value="rela">Relationship Issues
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Submit" name="submit" value="Submit" onblur="show()">
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
